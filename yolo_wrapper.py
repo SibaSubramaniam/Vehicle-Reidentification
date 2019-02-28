@@ -33,8 +33,10 @@ class Yolo:
 
 	def run(self,path):
 		
-		name=path[:-4]
-		frame_name="frame_set_extracted/"+name.split("/",1)[1]+"_"
+		path_name=path[:-4]
+		[folder,file]=path_name.split("/",1)
+		print(folder,file)
+		frame_name=folder+"_extracted/"+file+"_"
 
 		image = cv2.imread(path)
 		(H, W) = image.shape[:2]
